@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">The Movie Db</string>
+
+    <string name="api_key">3c427116a691b00ec54d8367fcdd00f3</string>
+
+    <string name="label.loading">Please wait &#8230;</string>
+    <string name="label.something_wrong">Something Wrong occurred</string>
+    <string name="label.overview">Overview</string>
+    <string name="label.release_year">Release Year</string>
+    <string name="label.genre">Genre</string>
+    <string name="label.watch_later">Watch Later</string>
+    <string name="label.favorite">Favorite</string>
+</resources>
