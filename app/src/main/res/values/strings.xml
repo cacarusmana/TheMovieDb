@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">The Movie Db</string>
 
-    <string name="api_key">3c427116a691b00ec54d8367fcdd00f3</string>
+    <string name="api_key">your api key here</string>
 
     <string name="label.loading">Please wait &#8230;</string>
     <string name="label.something_wrong">Something Wrong occurred</string>
