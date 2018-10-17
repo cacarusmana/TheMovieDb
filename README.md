@@ -4,7 +4,8 @@ Silahkan melakukan registrasi pada website tersebut dan dapatkan API Key nya, AP
 Untuk melihat panduan penggunaan API tersebut bisa dilihat di link ini https://developers.themoviedb.org/3/getting-started/introduction
 
 Aplikasi ini dibuat dengan menggunakan bahasa pemograman Java dan beberapa library yang digunakan dalam projek aplikasi ini :
-- Retrofit
+- Retrofit / OkHttp
+- GSON
 - ButterKnife
 - Glide
 - Android Architecture Component (LiveData dan ViewModel)
