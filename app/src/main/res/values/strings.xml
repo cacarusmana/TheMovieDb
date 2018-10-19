@@ -8,4 +8,6 @@
     <string name="label.genre">Genre</string>
     <string name="label.watch_later">Watch Later</string>
     <string name="label.favorite">Favorite</string>
+
+    <string name="error_connection">Problem connecting to server</string>
 </resources>

@@ -13,7 +13,7 @@ import com.caca.themoviedb.R;
 import com.caca.themoviedb.adapter.HomeAdapter;
 import com.caca.themoviedb.listener.OnItemClickListener;
 import com.caca.themoviedb.model.Movie;
-import com.caca.themoviedb.model.MovieDetailResponse;
+import com.caca.themoviedb.model.response.MovieDetailResponse;
 import com.caca.themoviedb.presenter.HomePresenter;
 import com.caca.themoviedb.util.Constant;
 import com.caca.themoviedb.util.GridSpacingItemDecoration;
@@ -124,7 +124,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnItemClickL
 
     @Override
     public void onErrorResponse(String message) {
-        showToast(message);
+        showToast(message == null ? getString(R.string.error_connection) : message);
     }
 
     @Override

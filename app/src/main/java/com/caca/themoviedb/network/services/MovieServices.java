@@ -1,7 +1,7 @@
 package com.caca.themoviedb.network.services;
 
-import com.caca.themoviedb.model.MovieDetailResponse;
-import com.caca.themoviedb.model.MovieResponse;
+import com.caca.themoviedb.model.response.MovieDetailResponse;
+import com.caca.themoviedb.model.response.MovieResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

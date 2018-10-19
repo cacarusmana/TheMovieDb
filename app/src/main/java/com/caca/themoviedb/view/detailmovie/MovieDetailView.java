@@ -1,6 +1,6 @@
 package com.caca.themoviedb.view.detailmovie;
 
-import com.caca.themoviedb.model.MovieDetailResponse;
+import com.caca.themoviedb.model.response.MovieDetailResponse;
 import com.caca.themoviedb.view.base.BaseView;
 
 /**

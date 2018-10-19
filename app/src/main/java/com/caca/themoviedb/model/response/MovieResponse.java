@@ -1,5 +1,7 @@
-package com.caca.themoviedb.model;
+package com.caca.themoviedb.model.response;
 
+import com.caca.themoviedb.model.Dates;
+import com.caca.themoviedb.model.Movie;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -8,7 +10,7 @@ import java.util.List;
 /**
  * @author caca rusmana
  */
-public class MovieResponse implements Serializable {
+public class MovieResponse extends BaseResponse implements Serializable {
 
     private static final long serialVersionUID = -7693800586762177629L;
 

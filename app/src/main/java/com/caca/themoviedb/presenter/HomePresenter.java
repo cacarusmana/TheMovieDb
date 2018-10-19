@@ -1,8 +1,8 @@
 package com.caca.themoviedb.presenter;
 
 import com.caca.themoviedb.BuildConfig;
-import com.caca.themoviedb.model.MovieDetailResponse;
-import com.caca.themoviedb.model.MovieResponse;
+import com.caca.themoviedb.model.response.MovieDetailResponse;
+import com.caca.themoviedb.model.response.MovieResponse;
 import com.caca.themoviedb.network.NetworkApi;
 import com.caca.themoviedb.network.services.MovieServices;
 import com.caca.themoviedb.view.home.HomeView;
@@ -42,7 +42,17 @@ public class HomePresenter implements BasePresenter<HomeView> {
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
                 homeView.hideDialog(false);
                 MovieResponse movieResponse = response.body();
-                homeView.displayMovies(movieResponse.getResults(), movieResponse.getTotalPages());
+
+                if (movieResponse != null) {
+                    if (movieResponse.isSuccess()) {
+                        homeView.displayMovies(movieResponse.getResults(), movieResponse.getTotalPages());
+                    } else {
+                        homeView.onErrorResponse(movieResponse.getErrorMessage());
+                    }
+                } else {
+                    homeView.onErrorResponse(null);
+                }
+
             }
 
             @Override
@@ -63,7 +73,19 @@ public class HomePresenter implements BasePresenter<HomeView> {
             @Override
             public void onResponse(Call<MovieDetailResponse> call, Response<MovieDetailResponse> response) {
                 homeView.hideDialog(true);
-                homeView.openDetailMovie(response.body());
+
+                MovieDetailResponse movieDetailResponse = response.body();
+
+                if (movieDetailResponse != null) {
+                    if (movieDetailResponse.isSuccess()) {
+                        homeView.openDetailMovie(movieDetailResponse);
+                    } else {
+                        homeView.onErrorResponse(movieDetailResponse.getErrorMessage());
+                    }
+                } else {
+                    homeView.onErrorResponse(null);
+                }
+
             }
 
             @Override
@@ -83,7 +105,19 @@ public class HomePresenter implements BasePresenter<HomeView> {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
                 homeView.hideDialog(true);
-                homeView.onLoadMoreSucceed(response.body().getResults());
+
+                MovieResponse movieResponse = response.body();
+
+                if (movieResponse != null) {
+                    if (movieResponse.isSuccess()) {
+                        homeView.onLoadMoreSucceed(movieResponse.getResults());
+                    } else {
+                        homeView.onErrorResponse(movieResponse.getErrorMessage());
+                    }
+                } else {
+                    homeView.onErrorResponse(null);
+                }
+
             }
 
             @Override

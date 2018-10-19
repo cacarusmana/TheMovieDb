@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.caca.themoviedb.R;
 import com.caca.themoviedb.listener.AsyncTaskCompleteListener;
-import com.caca.themoviedb.model.MovieDetailResponse;
+import com.caca.themoviedb.model.response.MovieDetailResponse;
 import com.caca.themoviedb.network.GetBackdropBitmapTask;
 import com.caca.themoviedb.presenter.DetailMoviePresenter;
 import com.caca.themoviedb.util.Constant;

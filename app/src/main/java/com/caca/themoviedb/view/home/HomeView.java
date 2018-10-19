@@ -1,7 +1,7 @@
 package com.caca.themoviedb.view.home;
 
 import com.caca.themoviedb.model.Movie;
-import com.caca.themoviedb.model.MovieDetailResponse;
+import com.caca.themoviedb.model.response.MovieDetailResponse;
 import com.caca.themoviedb.view.base.BaseView;
 
 import java.util.List;
