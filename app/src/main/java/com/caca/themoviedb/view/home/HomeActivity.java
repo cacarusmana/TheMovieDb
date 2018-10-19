@@ -72,7 +72,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnItemClickL
         recyclerView.addOnScrollListener(endlessScrollListener);
 
         if (homeViewModel.getMovieList().isEmpty())
-            homePresenter.loadMovies(getString(R.string.api_key), homeViewModel.getPage());
+            homePresenter.loadMovies(homeViewModel.getPage());
     }
 
 
@@ -97,7 +97,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnItemClickL
                     if (homeViewModel.getPage() < homeViewModel.getTotalRecord() && !isLoading) {
                         homeViewModel.increasePage();
                         isLoading = true;
-                        homePresenter.loadMoreMovies(getString(R.string.api_key), homeViewModel.getPage());
+                        homePresenter.loadMoreMovies(homeViewModel.getPage());
                     }
 
                 }
@@ -170,7 +170,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnItemClickL
 
     @Override
     public void onItemClick(int position) {
-        homePresenter.getDetailMovie(getString(R.string.api_key), homeViewModel.getMovieList().get(position).getId());
+        homePresenter.getDetailMovie(homeViewModel.getMovieList().get(position).getId());
     }
 
 }

@@ -9,6 +9,17 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+        // store api key on BuildConfig
+        File file = new File("secrets.properties")
+        if (file.exists()) {
+            def secretsFile = rootProject.file("secrets.properties")
+            def secrets = new Properties()
+            secrets.load(new FileInputStream(secretsFile))
+            buildConfigField "String", "API_KEY", secrets.getProperty("API_KEY")
+        }
+
     }
     buildTypes {
         release {

@@ -1,5 +1,6 @@
 package com.caca.themoviedb.presenter;
 
+import com.caca.themoviedb.BuildConfig;
 import com.caca.themoviedb.model.MovieDetailResponse;
 import com.caca.themoviedb.model.MovieResponse;
 import com.caca.themoviedb.network.NetworkApi;
@@ -32,9 +33,9 @@ public class HomePresenter implements BasePresenter<HomeView> {
         homeView = null;
     }
 
-    public void loadMovies(String apiKey, int page) {
+    public void loadMovies(int page) {
         homeView.showDialog(false);
-        Call<MovieResponse> movieResponseCall = movieServices.getMovies(apiKey, page);
+        Call<MovieResponse> movieResponseCall = movieServices.getMovies(BuildConfig.API_KEY, page);
         movieResponseCall.enqueue(new Callback<MovieResponse>() {
 
             @Override
@@ -54,9 +55,9 @@ public class HomePresenter implements BasePresenter<HomeView> {
         });
     }
 
-    public void getDetailMovie(String apiKey, Long id) {
+    public void getDetailMovie(Long id) {
         homeView.showDialog(true);
-        Call<MovieDetailResponse> movieResponseCall = movieServices.getDetailMovie(id, apiKey);
+        Call<MovieDetailResponse> movieResponseCall = movieServices.getDetailMovie(id, BuildConfig.API_KEY);
         movieResponseCall.enqueue(new Callback<MovieDetailResponse>() {
 
             @Override
@@ -74,9 +75,9 @@ public class HomePresenter implements BasePresenter<HomeView> {
         });
     }
 
-    public void loadMoreMovies(String apiKey, int page) {
+    public void loadMoreMovies(int page) {
         homeView.showDialog(true);
-        Call<MovieResponse> movieResponseCall = movieServices.getMovies(apiKey, page);
+        Call<MovieResponse> movieResponseCall = movieServices.getMovies(BuildConfig.API_KEY, page);
         movieResponseCall.enqueue(new Callback<MovieResponse>() {
 
             @Override
